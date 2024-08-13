@@ -1,0 +1,224 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url('/static/fonts/Comfortaa-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url('/static/fonts/Comfortaa-Light.ttf') format('ttf');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url('/static/fonts/Comfortaa-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url('/static/fonts/Comfortaa-Regular.ttf') format('ttf');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url('/static/fonts/Comfortaa-SemiBold.ttf') format('ttf');
+    font-weight: 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    color: #2E3035;
+    font-family: Comfortaa, serif;
+
+    display: flex;
+    flex-direction: column;
+    background-image: url("/static/img/back.png");
+    background-size: cover;
+}
+
+div.shapka {
+	position: fixed;
+	top: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #272a2e;
+	z-index: 2;
+
+    width: 100%;
+    height: 5%;
+}
+
+div.shapka-item {
+    width: 20%;
+    height: 100%;
+
+    margin-right: 5%;
+    margin-left: 5%;
+
+    color: #DDDDDD;
+    font-family: "Trebuchet MS", serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-align: center;
+    vertical-align: center;
+}
+
+div.shapka-logo {
+    width: 80%;
+    height: 100%;
+
+    text-align: center;
+}
+
+div.feed {
+	z-index: 1;
+	position: absolute;
+    background-color: #2E3035;
+    display: flex;
+    top: 5%;
+
+    width: 100%;
+}
+
+div.podval {
+	z-index: 2;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+
+    font-family: "Trebuchet MS", serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    text-align: center;
+    vertical-align: center;
+}
+
+footer.footer {
+    display: flex;
+	text-align: center;
+}
+
+div.column-end {
+    width: 10%;
+}
+
+div.column-between {
+    width: 2.5%;
+}
+
+div.column {
+    width: 25%;
+    bottom: 10%;
+    position: relative;
+    text-align: center;
+}
+
+div.post {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #464950;
+    -moz-columns: 10px 5;
+    -webkit-columns: 100px 5;
+    margin-top: 10%;
+
+    border: 3px solid #343434;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+div.post-image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-size: cover;
+    max-height: 300px;
+}
+
+div.post-info {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+
+    font-family: "Trebuchet MS", serif;
+    color: #DDDDDD;
+}
+
+div.post-info-description {
+    font-size: 24px;
+    text-align: center;
+    vertical-align: center;
+    font-weight: bold;
+
+    width: 100%;
+    height: 30%;
+}
+
+div.post-info-items {
+    display: flex;
+    flex-wrap: wrap;
+    top: 10%;
+}
+
+div.post-info-item {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 3%;
+    width: 30%;
+    height: 50%;
+}
+
+div.post-info-item-icon {
+    background-size: cover;
+
+    width: 50%;
+    height: 50%;
+}
+
+div.post-info-item-text {
+    width: 50%;
+    height: 100%;
+
+    color: #999999;
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: center;
+    vertical-align: center;
+}
+
+div.space {
+    margin-top: 100%;
+}
+
+div.comments {
+    background-color: #C8012C;
+}
+
+div.comment {
+    background-color: aqua;
+}

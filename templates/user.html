@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memoss: User {{ data.Nickname }}</title>
+    <link rel="stylesheet" href="/static/styles/user.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="/static/img/favicon.ico">
+</head>
+<body>
+    <img src="/static/user/{{ data.Preview }}" alt="">
+    data.ID: {{ data.ID }}
+    data.Nick {{ data.Nickname }}
+    data.Email {{ data.Email }}
+    data.Password {{ data.Password }}
+    data.URL {{ data.URL }}
+</body>
+</html>

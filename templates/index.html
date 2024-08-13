@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memoss</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/styles/index.css">
+    <link rel="icon" href="/static/img/favicon.ico">
+</head>
+<body>
+    <div class="feed">
+        <div class="shapka">
+            <div class="shapka-item" onclick="location.href='/'">
+                <div class="shapka-logo" style="cursor: pointer;">
+                    <img src="/static/img/logo.png" width="100%" height="100%" alt="">
+                </div>
+            </div>
+            {% for m in menu %}
+            <div class="shapka-item btn btn-dark" onclick="location.href={{ m.url }}">
+                {{ m.title }}
+            </div>
+            {% endfor %}
+            <div class="shapka-item btn btn-dark" onclick="location.href='/add'">
+                создать пост
+            </div>
+
+            <div class="shapka-item btn btn-dark" onclick="location.href='/log'">
+                войти в аккаунт
+            </div>
+
+            <div class="shapka-item btn btn-dark" onclick="location.href='/reg'">
+                создать аккаунт
+            </div>
+        </div>
+
+        <div class="column-end"></div>
+
+        <div class="column">
+            {% for post in left_column %}
+            <div class="post" onclick="location.href='/gallery/{{ post.url }}'">
+                <div class="post-image">
+                    <img src="/static/content/{{ post.icon }}" width="100%" alt="">
+                </div>
+                <div class="post-info">
+                    <div class="post-info-description">
+                        {{ post.title }}
+                    </div>
+                    <div class="post-info-items">
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/api/like/IDpost={{ post.ID }}'">
+                                <img src="/static/img/like_off.png" width="70%" height="70%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.reputation }}
+                            </div>
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/api/dislike/IDpost-{{ post.ID }}'">
+                                <img src="/static/img/dislike_off.png" width="70%" height="70%" alt="">
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/gallery/{{ post.url }}'">
+                                <img src="/static/img/com.png" width="50%" height="50%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.comments }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon">
+                                <img src="/static/img/views.png" width="50%" height="50%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.views }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="column-between"></div>
+
+        <div class="column">
+            {% for post in center_column %}
+            <div class="post" onclick="location.href='/gallery/{{ post.url }}'">
+                <div class="post-image">
+                    <img src="/static/content/{{ post.icon }}" width="100%" alt="">
+                </div>
+                <div class="post-info">
+                    <div class="post-info-description">
+                        {{ post.title }}
+                    </div>
+                    <div class="post-info-items">
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/api/like/IDpost={{ post.ID }}'">
+                                <img src="/static/img/like_off.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.Likes }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/api/like/IDpost={{ post.ID }}'">
+                                <img src="/static/img/dislike_off.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.Dislikes }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/gallery/{{ post.URL }}'">
+                                <img src="/static/img/com.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.comments }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon">
+                                <img src="/static/img/views.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.views }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="column-between"></div>
+
+        <div class="column">
+            {% for post in right_column %}
+            <div class="post" onclick="location.href='/gallery/{{ post.url }}'">
+                <div class="post-image">
+                    <img src="/static/content/{{ post.icon }}" width="100%" alt="">
+                </div>
+                <div class="post-info">
+                    <div class="post-info-description">
+                        {{ post.title }}
+                    </div>
+                    <div class="post-info-items">
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/api/like/IDpost={{ post.ID }}'">
+                                <img src="/static/img/like_off.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.Likes }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/api/like/IDpost={{ post.ID }}'">
+                                <img src="/static/img/dislike_off.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.Dislikes }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon" style="cursor: pointer" onclick="location.href='/gallery/{{ post.URL }}'">
+                                <img src="/static/img/com.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.comments }}
+                            </div>
+                        </div>
+                        <div class="post-info-item">
+                            <div class="post-info-item-icon">
+                                <img src="/static/img/views.png" width="40%" height="40%" alt="">
+                            </div>
+                            <div class="post-info-item-text">
+                                {{ post.views }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+	</div>
+	
+	<footer class="footer">
+		<div class="podval btn btn-dark" onclick="location.href='/'">
+			загрузить еще
+		</div>
+	</footer>
+</body>
+</html>
